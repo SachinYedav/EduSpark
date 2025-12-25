@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classroom - EduSpark</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="background-color: #0f172a; color: white">
+    <nav
+      class="navbar"
+      style="
+        background: #1e293b;
+        border-bottom: 1px solid #334155;
+        position: relative;
+      "
+    >
+      <div class="logo" style="color: white">
+        Edu<span class="highlight">Spark</span>.
+      </div>
+      <div class="nav-buttons">
+        <a href="dashboard.html" class="btn-secondary">
+          <i class="ri-arrow-left-line"></i> Back to Dashboard
+        </a>
+      </div>
+    </nav>
+
+    <div class="classroom-container">
+      <main class="video-section">
+        <div class="video-wrapper">
+          <iframe
+            id="main-video-player"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/jfKfPfyJRdk?si=placeholder"
+            title="Video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+
+        <div class="video-info">
+          <h1 id="current-video-title">Introduction to the Course</h1>
+          <p id="course-title-display" style="opacity: 0.7">
+            Loading Course...
+          </p>
+        </div>
+      </main>
+
+      <aside class="playlist-sidebar">
+        <div class="playlist-header">
+          <h3>Course Content</h3>
+          <span id="total-lessons">0 Lessons</span>
+        </div>
+
+        <div class="playlist-items" id="playlist-container">
+          <p style="padding: 20px; opacity: 0.6">Loading topics...</p>
+        </div>
+      </aside>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/classroom.js"></script>
+  </body>
+</html>

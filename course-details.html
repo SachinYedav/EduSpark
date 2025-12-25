@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Details - EduSpark</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar glass">
+      <div class="logo">Edu<span class="highlight">Spark</span>.</div>
+      <div class="nav-buttons">
+        <a href="index.html" class="btn-secondary"
+          ><i class="ri-arrow-left-line"></i> Back to Courses</a
+        >
+      </div>
+    </nav>
+
+    <div
+      id="loading-spinner"
+      style="
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      "
+    >
+      <i
+        class="ri-loader-4-line"
+        style="
+          font-size: 3rem;
+          color: var(--primary-color);
+          animation: spin 1s linear infinite;
+        "
+      ></i>
+      <p>Loading course details...</p>
+    </div>
+
+    <div id="course-main-content" style="display: none">
+      <header class="course-header bg-light section-padding">
+        <div class="breadcrumb">
+          Home > Courses > <span id="course-category">Category</span>
+        </div>
+        <h1 id="course-title">Course Title Here</h1>
+        <p id="course-desc">Short description will appear here.</p>
+
+        <div class="course-stats">
+          <span><i class="ri-star-fill icon-gold"></i> 4.8 Rating</span>
+          <span><i class="ri-global-line"></i> English & Hindi</span>
+          <span><i class="ri-calendar-check-line"></i> Live Classes</span>
+        </div>
+      </header>
+
+      <section class="course-container section-padding">
+        <div class="course-content">
+          <div class="learn-box glass">
+            <h3>Course Overview</h3>
+            <p
+              id="course-full-desc"
+              style="color: var(--text-dark); line-height: 1.6"
+            >
+              Detailed description loading...
+            </p>
+          </div>
+
+          <div class="syllabus-section">
+            <h3>Syllabus</h3>
+            <div id="syllabus-container"></div>
+          </div>
+        </div>
+
+        <div class="course-sidebar">
+          <div class="sidebar-card glass">
+            <div class="video-preview" id="course-bg-gradient">
+              <i class="ri-play-circle-fill"></i>
+              <span>Preview</span>
+            </div>
+            <div class="price-info">
+              <span class="current-price" id="course-price">₹0</span>
+              <span class="original-price" id="course-original-price">₹0</span>
+              <span class="discount">OFFER</span>
+            </div>
+
+            <button id="enroll-btn" class="btn-primary full-width">
+              Enroll Now
+            </button>
+            <button class="btn-secondary full-width" style="margin-top: 10px">
+              Download Syllabus
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/course-details.js"></script>
+  </body>
+</html>

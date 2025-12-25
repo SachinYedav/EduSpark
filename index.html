@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>EduSpark – Smart Learning for JEE, NEET & Foundation</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Eduspark is a smart learning platform for JEE, NEET, and Foundation students. Live classes, analytics, offline access, and mobile-first experience." />
+  <meta name="keywords" content="Eduspark, Online Coaching, JEE, NEET, Foundation, LMS, Education App, PWA" />
+  <meta name="author" content="EduSpark Team" />
+  <link rel="canonical" href="https://eduspark.netlify.app/" />
+
+  <!-- Theme / PWA -->
+  <meta name="theme-color" content="#6366f1" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- PWA Capabilities -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EduSpark">
+
+  <!-- Icons -->
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/images/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EduSpark" />
+  <meta property="og:title" content="EduSpark – Smart Learning Platform" />
+  <meta property="og:description" content="Premium coaching for JEE, NEET & Foundation with live classes and offline access." />
+  <meta property="og:image" content="/images/web-app-manifest-512x512.png" />
+  <meta property="og:url" content="https://eduspark.netlify.app/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EduSpark – Smart Learning Platform" />
+  <meta name="twitter:description" content="Learn smarter with Eduspark. Live classes, analytics & offline support." />
+  <meta name="twitter:image" content="/images/web-app-manifest-512x512.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icons Library -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+  <body>
+    <nav class="navbar glass">
+      <a href="index.html"><div class="logo">Edu<span class="highlight">Spark</span>.</div></a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="mobile-btn">
+          <a
+            href="login.html"
+            id="mobile-auth-btn"
+            class="btn-secondary full-width-btn"
+            >Login</a
+          >
+        </li>
+        <li class="mobile-btn" id="mobile-join-container">
+          <a href="login.html" class="btn-primary full-width-btn">Join Now</a>
+        </li>
+      </ul>
+      <div class="nav-buttons">
+        <a href="login.html" id="auth-btn" class="btn-secondary">Login</a>
+        <a href="login.html" class="btn-primary">Join Now</a>
+      </div>
+      <div class="hamburger" id="homeHamburger">
+        <i class="ri-menu-3-line"></i>
+      </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <div class="badge">🚀 New Batches Starting Soon</div>
+        <h1>
+          Unlock Your Potential with <br />
+          <span class="text-gradient">Modern Learning</span>
+        </h1>
+        <p>
+          Expert guidance for JEE, NEET, and Boards with a curriculum designed
+          for the future. Learn smarter, not harder.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#courses" class="btn-primary"
+            >Explore Courses <i class="ri-arrow-right-line"></i
+          ></a>
+          <button id="watchDemoBtn" class="btn-secondary">
+            <i class="ri-play-circle-fill" style="font-size: 1.2rem"></i> Watch
+            Demo
+          </button>
+        </div>
+
+        <div
+          class="stats-container glass"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div class="stat-box">
+            <h3>10k+</h3>
+            <p>Students</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <h3>500+</h3>
+            <p>Toppers</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <h3>4.9/5</h3>
+            <p>Rating</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000">
+        <div class="floating-card glass card-1">
+          <i class="ri-book-mark-fill icon-blue"></i><span>Live Classes</span>
+        </div>
+        <div class="floating-card glass card-2">
+          <i class="ri-trophy-fill icon-gold"></i><span>Top Results</span>
+        </div>
+        <div class="gradient-blob"></div>
+      </div>
+    </header>
+
+    <section id="features" class="section-padding">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">
+          Why Choose <span class="text-gradient">EduSpark?</span>
+        </h2>
+        <p class="section-subtitle">
+          We don't just teach; we transform your potential into results.
+        </p>
+      </div>
+      <div class="grid-3">
+        <div class="feature-card glass" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon-box"><i class="ri-video-chat-line"></i></div>
+          <h3>Interactive Live Classes</h3>
+          <p>
+            Two-way interaction with teachers, instant doubt solving, and
+            recorded backups.
+          </p>
+        </div>
+        <div class="feature-card glass" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-box"><i class="ri-bar-chart-grouped-line"></i></div>
+          <h3>Performance Analytics</h3>
+          <p>
+            AI-driven analysis of your test results to identify weak areas and
+            improve scores.
+          </p>
+        </div>
+        <div class="feature-card glass" data-aos="fade-up" data-aos-delay="300">
+          <div class="icon-box"><i class="ri-team-line"></i></div>
+          <h3>Expert Mentorship</h3>
+          <p>
+            Personal guidance from IITians and Medicos to keep you on the right
+            track.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="section-padding bg-light">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">
+          Explore Our <span class="text-gradient">Batches</span>
+        </h2>
+        <p class="section-subtitle">
+          Tailored courses for JEE, NEET, and Foundation years.
+        </p>
+      </div>
+      <div class="filter-container" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="All">All Batches</button>
+        <button class="filter-btn" data-filter="Engineering">
+          JEE (Engineering)
+        </button>
+        <button class="filter-btn" data-filter="Medical">NEET (Medical)</button>
+        <button class="filter-btn" data-filter="Foundation">
+          Foundation (Class 9-10)
+        </button>
+      </div>
+      <div class="grid-3" id="courses-container">
+        <div style="text-align: center; grid-column: 1 / -1; padding: 40px">
+          <i
+            class="ri-loader-4-line"
+            style="
+              font-size: 3rem;
+              color: var(--primary-color);
+              animation: spin 1s linear infinite;
+            "
+          ></i>
+          <p style="margin-top: 15px; color: var(--text-light)">
+            Loading courses...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <section id="results" class="section-padding">
+      <section id="results" class="section-padding">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">
+            Wall of <span class="text-gradient">Success</span>
+          </h2>
+          <p class="section-subtitle">
+            Join the league of toppers who trusted us.
+          </p>
+        </div>
+        <div class="marquee-container">
+          <div class="marquee-content" id="reviews-marquee">
+            <p style="padding: 20px; color: white">Loading reviews...</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="cta-section" data-aos="zoom-in">
+      <div class="cta-box gradient-bg">
+        <h2>Ready to Start Your Journey?</h2>
+        <p>
+          Admissions for academic year 2025-26 are now open. Don't miss your
+          seat.
+        </p>
+        <div class="cta-buttons">
+          <a href="login.html" class="btn-white">Apply Now</a>
+          <a href="#" id="whatsapp-btn" class="btn-outline-white"
+            ><i class="ri-whatsapp-line"></i> Chat on WhatsApp</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer id="about" class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="logo">Edu<span class="highlight">Spark</span>.</div>
+          <p>
+            Empowering students with knowledge, innovation, and success since
+            2015.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+            <a href="#"><i class="ri-youtube-fill"></i></a>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="login.html">Student Login</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>
+              <i class="ri-map-pin-line"></i> 123, Knowledge Park, City Center
+            </li>
+            <li><i class="ri-phone-line"></i> +91 98765 43210</li>
+            <li><i class="ri-mail-line"></i> admissions@eduspark.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 EduSpark Institute. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- PWA Install Prompt -->
+<div id="pwa-install-card" class="pwa-install hidden">
+  <div class="pwa-install-content">
+    <img src="/images/web-app-manifest-192x192.png" alt="EduSpark" />
+    <div class="pwa-install-text">
+      <h4>Install EduSpark</h4>
+      <p>Fast access, offline support & app-like experience.</p>
+    </div>
+    <button id="pwa-install-btn">Install</button>
+    <button id="pwa-close-btn">✕</button>
+  </div>
+</div>
+
+    <!-- Demo video modal -->
+    <div id="demoModal" class="video-modal-overlay hidden">
+      <div class="video-modal-content">
+        <button id="closeVideoBtn" class="close-video">&times;</button>
+
+        <div class="video-container">
+          <iframe
+            id="promoVideo"
+            src=""
+            title="Demo Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/load-courses.js"></script>
+  </body>
+</html>
