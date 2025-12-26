@@ -2607,7 +2607,7 @@ ul {
     }
 
     .nav-buttons {
-        display: inline-block;
+        display: none;
     }
 
     .mobile-btn {
