@@ -447,7 +447,7 @@ window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
   deferredPrompt = e;
 
-  if (!isInstalled() && !installShown) {
+  if (!isInstalled() && !installShown && installCard) {
     installShown = true;
     setTimeout(() => installCard.classList.remove("hidden"), 4000);
   }
@@ -483,4 +483,31 @@ window.addEventListener("load", () => {
 // Installed
 window.addEventListener("appinstalled", () => {
   installCard?.classList.add("hidden");
+});
+
+// ==========================================
+// 12. OFFLINE SUPPORT & SERVICE WORKER
+// ==========================================
+
+// A. Service Worker Register Karna
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then((reg) => console.log("✅ Service Worker Registered:", reg.scope))
+      .catch((err) => console.error("❌ Service Worker Error:", err));
+  });
+}
+
+// B. Online/Offline Toasts 
+window.addEventListener("offline", () => {
+  if (typeof showToast === "function") {
+    showToast("No Internet", "You are currently offline.", "error");
+  }
+});
+
+window.addEventListener("online", () => {
+  if (typeof showToast === "function") {
+    showToast("Back Online", "Internet connection restored.", "success");
+  }
 });
