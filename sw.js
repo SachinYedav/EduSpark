@@ -1,65 +1,59 @@
-const CACHE_NAME = "eduspark-cache-v4";
+const CACHE_NAME = "eduspark-offline-v1"; 
 const OFFLINE_URL = "/offline.html";
 
-const ASSETS_TO_CACHE = [
+const CORE_ASSETS = [
   "/",
   "/index.html",
   "/offline.html",
   "/style.css",
-
-  "/js/script.js",
-  "/js/firebase-config.js",
-
-  "/images/favicon.ico",
-  "/images/apple-touch-icon.png",
-  "/images/web-app-manifest-192x192.png",
-  "/images/web-app-manifest-512x512.png"
+  "/js/script.js"
 ];
 
-// INSTALL
+// 1. INSTALL: files into cache
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS_TO_CACHE))
+    caches.open(CACHE_NAME).then(async (cache) => {
+      await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
+      
+      for (const asset of CORE_ASSETS) {
+        try {
+          await cache.add(asset);
+        } catch (e) {
+          console.log("⚠️ Asset skip:", asset);
+        }
+      }
+    })
   );
   self.skipWaiting();
 });
 
-// ACTIVATE
+// 2. ACTIVATE: delete old cache
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    Promise.all([
-      caches.keys().then((keys) =>
-        Promise.all(keys.map((k) => k !== CACHE_NAME && caches.delete(k)))
-      ),
-      self.registration.navigationPreload?.enable()
-    ])
+    caches.keys().then((keys) =>
+      Promise.all(keys.map((k) => k !== CACHE_NAME && caches.delete(k)))
+    )
   );
   self.clients.claim();
 });
 
-// FETCH
 self.addEventListener("fetch", (event) => {
-  const url = event.request.url;
-
-  // Ignore external APIs
-  if (
-    url.includes("googleapis.com") ||
-    url.includes("firestore.googleapis.com") ||
-    url.includes("cloudinary.com") ||
-    url.includes("chrome-extension")
-  ) {
-    return;
-  }
-
-  // Navigation requests
   if (event.request.mode === "navigate") {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match(OFFLINE_URL))
+      fetch(event.request)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then((c) => c.put(event.request, copy));
+          return res;
+        })
+        .catch(() => {
+          return caches.match(OFFLINE_URL);
+        })
     );
     return;
   }
 
-  // Assets
+  // CSS, JS, Images Cache First check
   event.respondWith(
     caches.match(event.request).then((res) => res || fetch(event.request))
   );
